@@ -1,22 +1,22 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../../">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>pydna.design &mdash; pydna 0.0.0.post1+233e38e documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+  <title>pydna.design &mdash; pydna 6.0.0a24.post17+b7b559bd66 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=a051be83" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=f031b35a"></script>
-        <script src="../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=d848064a"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" /> 
@@ -33,9 +33,6 @@
           <a href="../../index.html" class="icon icon-home">
             pydna
           </a>
-              <div class="version">
-                0.0.0
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -44,8 +41,15 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <!-- Local TOC -->
-              <div class="local-toc"></div>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Pydna</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/index.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../example_gallery.html">Example gallery</a></li>
+</ul>
+
         </div>
       </div>
     </nav>
@@ -88,24 +92,30 @@
 
 <span class="sd">&quot;&quot;&quot;</span>
 
-<span class="kn">from</span> <span class="nn">pydna.tm</span> <span class="kn">import</span> <span class="n">tm_default</span> <span class="k">as</span> <span class="n">_tm_default</span>
-<span class="kn">import</span> <span class="nn">math</span> <span class="k">as</span> <span class="nn">_math</span>
-<span class="kn">import</span> <span class="nn">os</span> <span class="k">as</span> <span class="nn">_os</span>
-<span class="kn">import</span> <span class="nn">copy</span> <span class="k">as</span> <span class="nn">_copy</span>
-<span class="kn">from</span> <span class="nn">pydna.amplicon</span> <span class="kn">import</span> <span class="n">Amplicon</span> <span class="k">as</span> <span class="n">_Amplicon</span>
-<span class="kn">from</span> <span class="nn">pydna.amplify</span> <span class="kn">import</span> <span class="n">Anneal</span> <span class="k">as</span> <span class="n">_Anneal</span>
-<span class="kn">from</span> <span class="nn">pydna.amplify</span> <span class="kn">import</span> <span class="n">pcr</span> <span class="k">as</span> <span class="n">_pcr</span>
-<span class="kn">from</span> <span class="nn">pydna.dseqrecord</span> <span class="kn">import</span> <span class="n">Dseqrecord</span> <span class="k">as</span> <span class="n">_Dseqrecord</span>
-<span class="kn">from</span> <span class="nn">pydna.primer</span> <span class="kn">import</span> <span class="n">Primer</span> <span class="k">as</span> <span class="n">_Primer</span>
-<span class="kn">import</span> <span class="nn">logging</span> <span class="k">as</span> <span class="nn">_logging</span>
-<span class="kn">import</span> <span class="nn">operator</span> <span class="k">as</span> <span class="nn">_operator</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Tuple</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pydna.tm</span><span class="w"> </span><span class="kn">import</span> <span class="n">tm_default</span> <span class="k">as</span> <span class="n">_tm_default</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_math</span>
 
-<span class="n">_module_logger</span> <span class="o">=</span> <span class="n">_logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;pydna.&quot;</span> <span class="o">+</span> <span class="vm">__name__</span><span class="p">)</span>
+<span class="c1"># import os as _os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">copy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_copy</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pydna.amplicon</span><span class="w"> </span><span class="kn">import</span> <span class="n">Amplicon</span> <span class="k">as</span> <span class="n">_Amplicon</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pydna.amplify</span><span class="w"> </span><span class="kn">import</span> <span class="n">Anneal</span> <span class="k">as</span> <span class="n">_Anneal</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pydna.amplify</span><span class="w"> </span><span class="kn">import</span> <span class="n">pcr</span> <span class="k">as</span> <span class="n">_pcr</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pydna.dseqrecord</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dseqrecord</span> <span class="k">as</span> <span class="n">_Dseqrecord</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pydna.primer</span><span class="w"> </span><span class="kn">import</span> <span class="n">Primer</span> <span class="k">as</span> <span class="n">_Primer</span>
+
+<span class="c1"># import logging as _logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">operator</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_operator</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Tuple</span>
+
+<span class="c1"># _module_logger = _logging.getLogger(&quot;pydna.&quot; + __name__)</span>
 
 
-<span class="k">def</span> <span class="nf">_design_primer</span><span class="p">(</span>
-    <span class="n">target_tm</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">template</span><span class="p">:</span> <span class="n">_Dseqrecord</span><span class="p">,</span> <span class="n">limit</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">tm_func</span><span class="p">,</span> <span class="n">starting_length</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_design_primer</span><span class="p">(</span>
+    <span class="n">target_tm</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span>
+    <span class="n">template</span><span class="p">:</span> <span class="n">_Dseqrecord</span><span class="p">,</span>
+    <span class="n">limit</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span>
+    <span class="n">tm_func</span><span class="p">,</span>
+    <span class="n">starting_length</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;returns a tuple (temp, primer)&quot;&quot;&quot;</span>
 
@@ -115,7 +125,7 @@
     <span class="n">length</span> <span class="o">=</span> <span class="n">starting_length</span>
     <span class="n">tlen</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">template</span><span class="p">)</span>
 
-    <span class="n">tmp</span> <span class="o">=</span> <span class="n">tm_func</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">seq</span><span class="p">[:</span><span class="n">length</span><span class="p">]))</span>
+    <span class="n">tmp</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">tm_func</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">seq</span><span class="p">[:</span><span class="n">length</span><span class="p">])))</span>
 
     <span class="n">p</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">seq</span><span class="p">[:</span><span class="n">length</span><span class="p">])</span>
 
@@ -137,7 +147,7 @@
         <span class="k">if</span> <span class="n">length</span> <span class="o">&lt;</span> <span class="n">limit</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">template</span><span class="o">.</span><span class="n">seq</span><span class="p">[:</span><span class="n">limit</span><span class="p">]</span>
 
-    <span class="n">_module_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(((</span><span class="n">p</span><span class="p">,</span> <span class="n">tmp</span><span class="p">),</span> <span class="p">(</span><span class="n">prev_primer</span><span class="p">,</span> <span class="n">prev_temp</span><span class="p">)))</span>
+    <span class="c1"># _module_logger.debug(((p, tmp), (prev_primer, prev_temp)))</span>
     <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">target_tm</span> <span class="o">-</span> <span class="n">tmp</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nb">abs</span><span class="p">(</span><span class="n">target_tm</span> <span class="o">-</span> <span class="n">prev_temp</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">p</span>
     <span class="k">else</span><span class="p">:</span>
@@ -145,9 +155,16 @@
 
 
 <div class="viewcode-block" id="primer_design">
-<a class="viewcode-back" href="../../index.html#pydna.design.primer_design">[docs]</a>
-<span class="k">def</span> <span class="nf">primer_design</span><span class="p">(</span>
-    <span class="n">template</span><span class="p">,</span> <span class="n">fp</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">rp</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span> <span class="n">target_tm</span><span class="o">=</span><span class="mf">55.0</span><span class="p">,</span> <span class="n">tm_func</span><span class="o">=</span><span class="n">_tm_default</span><span class="p">,</span> <span class="n">estimate_function</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+<a class="viewcode-back" href="../../modules/pydna_design.html#pydna.all.primer_design">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">primer_design</span><span class="p">(</span>
+    <span class="n">template</span><span class="p">,</span>
+    <span class="n">fp</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">rp</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">limit</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span>
+    <span class="n">target_tm</span><span class="o">=</span><span class="mf">55.0</span><span class="p">,</span>
+    <span class="n">tm_func</span><span class="o">=</span><span class="n">_tm_default</span><span class="p">,</span>
+    <span class="n">estimate_function</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
 <span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;This function designs a forward primer and a reverse primer for PCR amplification</span>
 <span class="sd">    of a given template sequence.</span>
@@ -246,7 +263,7 @@
 <span class="sd">    r64 32-mer:5&#39;-catcgtaagtttcga..atc-3&#39;</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="nf">design</span><span class="p">(</span><span class="n">target_tm</span><span class="p">,</span> <span class="n">template</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">design</span><span class="p">(</span><span class="n">target_tm</span><span class="p">,</span> <span class="n">template</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">estimate_function</span><span class="p">:</span>
             <span class="n">first_guess</span> <span class="o">=</span> <span class="n">_design_primer</span><span class="p">(</span><span class="n">target_tm</span><span class="p">,</span> <span class="n">template</span><span class="p">,</span> <span class="n">limit</span><span class="p">,</span> <span class="n">estimate_function</span><span class="p">)</span>
             <span class="k">return</span> <span class="n">_design_primer</span><span class="p">(</span><span class="n">target_tm</span><span class="p">,</span> <span class="n">template</span><span class="p">,</span> <span class="n">limit</span><span class="p">,</span> <span class="n">tm_func</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">first_guess</span><span class="p">))</span>
@@ -254,10 +271,10 @@
             <span class="k">return</span> <span class="n">_design_primer</span><span class="p">(</span><span class="n">target_tm</span><span class="p">,</span> <span class="n">template</span><span class="p">,</span> <span class="n">limit</span><span class="p">,</span> <span class="n">tm_func</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">fp</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">rp</span><span class="p">:</span>
-        <span class="n">_module_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;no primer given, design forward primer:&quot;</span><span class="p">)</span>
+        <span class="c1"># _module_logger.debug(&quot;no primer given, design forward primer:&quot;)</span>
         <span class="n">fp</span> <span class="o">=</span> <span class="n">_Primer</span><span class="p">((</span><span class="n">design</span><span class="p">(</span><span class="n">target_tm</span><span class="p">,</span> <span class="n">template</span><span class="p">)))</span>
         <span class="n">target_tm</span> <span class="o">=</span> <span class="n">tm_func</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">fp</span><span class="o">.</span><span class="n">seq</span><span class="p">))</span>
-        <span class="n">_module_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;no primer given, design reverse primer:&quot;</span><span class="p">)</span>
+        <span class="c1"># _module_logger.debug(&quot;no primer given, design reverse primer:&quot;)</span>
         <span class="n">rp</span> <span class="o">=</span> <span class="n">_Primer</span><span class="p">(</span><span class="n">design</span><span class="p">(</span><span class="n">target_tm</span><span class="p">,</span> <span class="n">template</span><span class="o">.</span><span class="n">reverse_complement</span><span class="p">()))</span>
     <span class="k">elif</span> <span class="n">fp</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">rp</span><span class="p">:</span>
         <span class="k">try</span><span class="p">:</span>
@@ -268,7 +285,7 @@
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Unexpected error&quot;</span><span class="p">)</span>
             <span class="k">raise</span>
         <span class="n">target_tm</span> <span class="o">=</span> <span class="n">tm_func</span><span class="p">(</span><span class="n">fp</span><span class="o">.</span><span class="n">footprint</span><span class="p">)</span>
-        <span class="n">_module_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;forward primer given, design reverse primer:&quot;</span><span class="p">)</span>
+        <span class="c1"># _module_logger.debug(&quot;forward primer given, design reverse primer:&quot;)</span>
         <span class="n">rp</span> <span class="o">=</span> <span class="n">_Primer</span><span class="p">(</span><span class="n">design</span><span class="p">(</span><span class="n">target_tm</span><span class="p">,</span> <span class="n">template</span><span class="o">.</span><span class="n">reverse_complement</span><span class="p">()))</span>
     <span class="k">elif</span> <span class="ow">not</span> <span class="n">fp</span> <span class="ow">and</span> <span class="n">rp</span><span class="p">:</span>
         <span class="k">try</span><span class="p">:</span>
@@ -279,7 +296,7 @@
             <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Unexpected error&quot;</span><span class="p">)</span>
             <span class="k">raise</span>
         <span class="n">target_tm</span> <span class="o">=</span> <span class="n">tm_func</span><span class="p">(</span><span class="n">rp</span><span class="o">.</span><span class="n">footprint</span><span class="p">)</span>
-        <span class="n">_module_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;reverse primer given, design forward primer:&quot;</span><span class="p">)</span>
+        <span class="c1"># _module_logger.debug(&quot;reverse primer given, design forward primer:&quot;)</span>
         <span class="n">fp</span> <span class="o">=</span> <span class="n">_Primer</span><span class="p">(</span><span class="n">design</span><span class="p">(</span><span class="n">target_tm</span><span class="p">,</span> <span class="n">template</span><span class="p">))</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Specify maximum one of the two primers.&quot;</span><span class="p">)</span>
@@ -304,18 +321,20 @@
     <span class="n">prod</span> <span class="o">=</span> <span class="n">ampl</span><span class="o">.</span><span class="n">products</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">ampl</span><span class="o">.</span><span class="n">products</span> <span class="k">else</span> <span class="n">_Amplicon</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">ampl</span><span class="o">.</span><span class="n">products</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="kn">import</span> <span class="nn">warnings</span> <span class="k">as</span> <span class="nn">_warnings</span>
-        <span class="kn">from</span> <span class="nn">pydna</span> <span class="kn">import</span> <span class="n">_PydnaWarning</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_warnings</span>
+        <span class="kn">from</span><span class="w"> </span><span class="nn">pydna</span><span class="w"> </span><span class="kn">import</span> <span class="n">_PydnaWarning</span>
 
-        <span class="n">_warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;designed primers do not yield a unique PCR product&quot;</span><span class="p">,</span> <span class="n">_PydnaWarning</span><span class="p">)</span>
+        <span class="n">_warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+            <span class="s2">&quot;designed primers do not yield a unique PCR product&quot;</span><span class="p">,</span> <span class="n">_PydnaWarning</span>
+        <span class="p">)</span>
 
     <span class="k">return</span> <span class="n">prod</span></div>
 
 
 
 <div class="viewcode-block" id="assembly_fragments">
-<a class="viewcode-back" href="../../index.html#pydna.design.assembly_fragments">[docs]</a>
-<span class="k">def</span> <span class="nf">assembly_fragments</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">overlap</span><span class="o">=</span><span class="mi">35</span><span class="p">,</span> <span class="n">maxlink</span><span class="o">=</span><span class="mi">40</span><span class="p">):</span>
+<a class="viewcode-back" href="../../modules/pydna_design.html#pydna.all.assembly_fragments">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">assembly_fragments</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">overlap</span><span class="o">=</span><span class="mi">35</span><span class="p">,</span> <span class="n">maxlink</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">circular</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;This function return a list of :mod:`pydna.amplicon.Amplicon` objects where</span>
 <span class="sd">    primers have been modified with tails so that the fragments can be fused in</span>
 <span class="sd">    the order they appear in the list by for example Gibson assembly or homologous</span>
@@ -642,6 +661,9 @@
 <span class="sd">    maxlink : int, optional</span>
 <span class="sd">        Maximum length of spacer sequences that may be present in f. These will be included in tails for designed primers.</span>
 
+<span class="sd">    circular : bool, optional</span>
+<span class="sd">        If True, the assembly is circular. If False, the assembly is linear.</span>
+
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    seqs : list of :mod:`pydna.amplicon.Amplicon` and other Dseqrecord like objects :mod:`pydna.amplicon.Amplicon` objects</span>
@@ -699,14 +721,32 @@
 <span class="sd">    &gt;&gt;&gt;</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Recursive call for circular assemblies</span>
+    <span class="k">if</span> <span class="n">circular</span><span class="p">:</span>
+        <span class="n">fragments</span> <span class="o">=</span> <span class="n">assembly_fragments</span><span class="p">(</span>
+            <span class="n">f</span> <span class="o">+</span> <span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">],</span> <span class="n">overlap</span><span class="o">=</span><span class="n">overlap</span><span class="p">,</span> <span class="n">maxlink</span><span class="o">=</span><span class="n">maxlink</span><span class="p">,</span> <span class="n">circular</span><span class="o">=</span><span class="kc">False</span>
+        <span class="p">)</span>
+
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">fragments</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;template&quot;</span><span class="p">):</span>
+            <span class="n">fragments</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">_pcr</span><span class="p">(</span>
+                <span class="p">(</span><span class="n">fragments</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">forward_primer</span><span class="p">,</span> <span class="n">fragments</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">reverse_primer</span><span class="p">),</span>
+                <span class="n">fragments</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">template</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="n">fragments</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
     <span class="c1"># sanity check for arguments</span>
     <span class="n">nf</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">f</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">maxlink</span><span class="p">]</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="nb">hasattr</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;template&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;template&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">nf</span><span class="p">,</span> <span class="n">nf</span><span class="p">[</span><span class="mi">1</span><span class="p">:])):</span>
-        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Every second fragment larger than maxlink has to be an Amplicon object&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span>
+        <span class="nb">hasattr</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;template&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;template&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">nf</span><span class="p">,</span> <span class="n">nf</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+    <span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+            <span class="s2">&quot;Every second fragment larger than maxlink has to be an Amplicon object&quot;</span>
+        <span class="p">)</span>
 
-    <span class="n">_module_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;### assembly fragments ###&quot;</span><span class="p">)</span>
-    <span class="n">_module_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;overlap     = </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">overlap</span><span class="p">)</span>
-    <span class="n">_module_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;max_link    = </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">maxlink</span><span class="p">)</span>
+    <span class="c1"># _module_logger.debug(&quot;### assembly fragments ###&quot;)</span>
+    <span class="c1"># _module_logger.debug(&quot;overlap     = %s&quot;, overlap)</span>
+    <span class="c1"># _module_logger.debug(&quot;max_link    = %s&quot;, maxlink)</span>
 
     <span class="n">f</span> <span class="o">=</span> <span class="p">[</span><span class="n">_copy</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">f</span><span class="p">]</span>
 
@@ -716,23 +756,24 @@
     <span class="k">if</span> <span class="n">first_fragment_length</span> <span class="o">&lt;=</span> <span class="n">maxlink</span><span class="p">:</span>
         <span class="c1"># first fragment should be removed and added to second fragment (new first fragment) forward primer</span>
         <span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">forward_primer</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">seq</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;ASCII&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">forward_primer</span>
-        <span class="n">_module_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;first fragment removed since len(f[0]) = </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">first_fragment_length</span><span class="p">)</span>
+        <span class="c1"># _module_logger.debug(&quot;first fragment removed since len(f[0]) = %s&quot;, first_fragment_length)</span>
         <span class="n">f</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">_module_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;first fragment stays since len(f[0]) = </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">first_fragment_length</span><span class="p">)</span>
+    <span class="c1"># else:</span>
+    <span class="c1"># _module_logger.debug(&quot;first fragment stays since len(f[0]) = %s&quot;, first_fragment_length)</span>
 
     <span class="k">if</span> <span class="n">last_fragment_length</span> <span class="o">&lt;=</span> <span class="n">maxlink</span><span class="p">:</span>
-        <span class="n">f</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">reverse_primer</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">seq</span><span class="o">.</span><span class="n">reverse_complement</span><span class="p">()</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;ASCII&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">reverse_primer</span>
+        <span class="n">f</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">reverse_primer</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">f</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">seq</span><span class="o">.</span><span class="n">reverse_complement</span><span class="p">()</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;ASCII&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">reverse_primer</span>
+        <span class="p">)</span>
         <span class="n">f</span> <span class="o">=</span> <span class="n">f</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-        <span class="n">_module_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;last fragment removed since len(f[</span><span class="si">%s</span><span class="s2">]) = </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="n">last_fragment_length</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">_module_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;last fragment stays since len(f[</span><span class="si">%s</span><span class="s2">]) = </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="p">),</span> <span class="n">last_fragment_length</span><span class="p">)</span>
+    <span class="c1"># _module_logger.debug(&quot;last fragment removed since len(f[%s]) = %s&quot;, len(f), last_fragment_length)</span>
+    <span class="c1"># else:</span>
+    <span class="c1"># _module_logger.debug(&quot;last fragment stays since len(f[%s]) = %s&quot;, len(f), last_fragment_length)</span>
 
     <span class="n">empty</span> <span class="o">=</span> <span class="n">_Dseqrecord</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
 
-    <span class="n">_module_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-
-    <span class="n">_module_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;loop through fragments in groups of three:&quot;</span><span class="p">)</span>
+    <span class="c1"># _module_logger.debug(f)</span>
+    <span class="c1"># _module_logger.debug(&quot;loop through fragments in groups of three:&quot;)</span>
 
     <span class="n">tail_length</span> <span class="o">=</span> <span class="n">_math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">overlap</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
 
@@ -742,42 +783,56 @@
 
         <span class="n">secnd_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">secnd</span><span class="p">)</span>
 
-        <span class="n">_module_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;first = </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">first</span><span class="o">.</span><span class="n">seq</span><span class="p">))</span>
-        <span class="n">_module_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;secnd = </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">secnd</span><span class="o">.</span><span class="n">seq</span><span class="p">))</span>
+        <span class="c1"># _module_logger.debug(&quot;first = %s&quot;, str(first.seq))</span>
+        <span class="c1"># _module_logger.debug(&quot;secnd = %s&quot;, str(secnd.seq))</span>
 
         <span class="k">if</span> <span class="n">secnd_len</span> <span class="o">&lt;=</span> <span class="n">maxlink</span><span class="p">:</span>
-            <span class="n">_module_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;secnd is smaller or equal to maxlink; should be added to primer(s)&quot;</span><span class="p">)</span>
+            <span class="c1"># _module_logger.debug(&quot;secnd is smaller or equal to maxlink; should be added to primer(s)&quot;)</span>
             <span class="n">third</span> <span class="o">=</span> <span class="n">f</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">]</span>
-            <span class="n">_module_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;third = </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">third</span><span class="o">.</span><span class="n">seq</span><span class="p">))</span>
+            <span class="c1"># _module_logger.debug(&quot;third = %s&quot;, str(third.seq))</span>
             <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s2">&quot;template&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">third</span><span class="p">,</span> <span class="s2">&quot;template&quot;</span><span class="p">):</span>
-                <span class="n">_module_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
-                    <span class="s2">&quot;secnd is is flanked by amplicons, so half of secnd should be added each flanking primers&quot;</span>
-                <span class="p">)</span>
+                <span class="c1"># _module_logger.debug(</span>
+                <span class="c1">#    &quot;secnd is is flanked by amplicons, so half of secnd should be added each flanking primers&quot;</span>
+                <span class="c1"># )</span>
 
                 <span class="n">first</span><span class="o">.</span><span class="n">reverse_primer</span> <span class="o">=</span> <span class="p">(</span>
-                    <span class="n">secnd</span><span class="o">.</span><span class="n">seq</span><span class="o">.</span><span class="n">reverse_complement</span><span class="p">()</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;ASCII&quot;</span><span class="p">)[</span><span class="n">secnd_len</span> <span class="o">//</span> <span class="mi">2</span> <span class="p">:]</span> <span class="o">+</span> <span class="n">first</span><span class="o">.</span><span class="n">reverse_primer</span>
+                    <span class="n">secnd</span><span class="o">.</span><span class="n">seq</span><span class="o">.</span><span class="n">reverse_complement</span><span class="p">()</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;ASCII&quot;</span><span class="p">)[</span>
+                        <span class="n">secnd_len</span> <span class="o">//</span> <span class="mi">2</span> <span class="p">:</span>
+                    <span class="p">]</span>
+                    <span class="o">+</span> <span class="n">first</span><span class="o">.</span><span class="n">reverse_primer</span>
                 <span class="p">)</span>
-                <span class="n">third</span><span class="o">.</span><span class="n">forward_primer</span> <span class="o">=</span> <span class="n">secnd</span><span class="o">.</span><span class="n">seq</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;ASCII&quot;</span><span class="p">)[</span><span class="n">secnd_len</span> <span class="o">//</span> <span class="mi">2</span> <span class="p">:]</span> <span class="o">+</span> <span class="n">third</span><span class="o">.</span><span class="n">forward_primer</span>
+                <span class="n">third</span><span class="o">.</span><span class="n">forward_primer</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="n">secnd</span><span class="o">.</span><span class="n">seq</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;ASCII&quot;</span><span class="p">)[</span><span class="n">secnd_len</span> <span class="o">//</span> <span class="mi">2</span> <span class="p">:]</span>
+                    <span class="o">+</span> <span class="n">third</span><span class="o">.</span><span class="n">forward_primer</span>
+                <span class="p">)</span>
 
                 <span class="n">lnk</span> <span class="o">=</span> <span class="p">(</span>
                     <span class="n">third</span><span class="o">.</span><span class="n">seq</span><span class="o">.</span><span class="n">reverse_complement</span><span class="p">()</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;ASCII&quot;</span><span class="p">)</span>
-                    <span class="o">+</span> <span class="n">secnd</span><span class="o">.</span><span class="n">reverse_complement</span><span class="p">()</span><span class="o">.</span><span class="n">seq</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;ASCII&quot;</span><span class="p">)[:</span> <span class="n">secnd_len</span> <span class="o">//</span> <span class="mi">2</span><span class="p">]</span>
+                    <span class="o">+</span> <span class="n">secnd</span><span class="o">.</span><span class="n">reverse_complement</span><span class="p">()</span><span class="o">.</span><span class="n">seq</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;ASCII&quot;</span><span class="p">)[</span>
+                        <span class="p">:</span> <span class="n">secnd_len</span> <span class="o">//</span> <span class="mi">2</span>
+                    <span class="p">]</span>
                 <span class="p">)[</span><span class="o">-</span><span class="n">tail_length</span><span class="p">:]</span>
-                <span class="n">_module_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;1 </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">lnk</span><span class="p">)</span>
+                <span class="c1"># _module_logger.debug(&quot;1 %s&quot;, lnk)</span>
                 <span class="n">first</span><span class="o">.</span><span class="n">reverse_primer</span> <span class="o">=</span> <span class="n">lnk</span> <span class="o">+</span> <span class="n">first</span><span class="o">.</span><span class="n">reverse_primer</span>
 
-                <span class="n">lnk</span> <span class="o">=</span> <span class="p">(</span><span class="n">first</span><span class="o">.</span><span class="n">seq</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;ASCII&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="n">secnd</span><span class="o">.</span><span class="n">seq</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;ASCII&quot;</span><span class="p">)[:</span> <span class="n">secnd_len</span> <span class="o">//</span> <span class="mi">2</span><span class="p">])[</span>
-                    <span class="o">-</span><span class="n">tail_length</span><span class="p">:</span>
-                <span class="p">]</span>
-                <span class="n">_module_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;2 </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">lnk</span><span class="p">)</span>
+                <span class="n">lnk</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="n">first</span><span class="o">.</span><span class="n">seq</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;ASCII&quot;</span><span class="p">)</span>
+                    <span class="o">+</span> <span class="n">secnd</span><span class="o">.</span><span class="n">seq</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;ASCII&quot;</span><span class="p">)[:</span> <span class="n">secnd_len</span> <span class="o">//</span> <span class="mi">2</span><span class="p">]</span>
+                <span class="p">)[</span><span class="o">-</span><span class="n">tail_length</span><span class="p">:]</span>
+                <span class="c1"># _module_logger.debug(&quot;2 %s&quot;, lnk)</span>
                 <span class="n">third</span><span class="o">.</span><span class="n">forward_primer</span> <span class="o">=</span> <span class="n">lnk</span> <span class="o">+</span> <span class="n">third</span><span class="o">.</span><span class="n">forward_primer</span>
 
             <span class="k">elif</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="s2">&quot;template&quot;</span><span class="p">):</span>
-                <span class="n">first</span><span class="o">.</span><span class="n">reverse_primer</span> <span class="o">=</span> <span class="n">secnd</span><span class="o">.</span><span class="n">seq</span><span class="o">.</span><span class="n">reverse_complement</span><span class="p">()</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;ASCII&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="n">first</span><span class="o">.</span><span class="n">reverse_primer</span>
+                <span class="n">first</span><span class="o">.</span><span class="n">reverse_primer</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="n">secnd</span><span class="o">.</span><span class="n">seq</span><span class="o">.</span><span class="n">reverse_complement</span><span class="p">()</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;ASCII&quot;</span><span class="p">)</span>
+                    <span class="o">+</span> <span class="n">first</span><span class="o">.</span><span class="n">reverse_primer</span>
+                <span class="p">)</span>
                 <span class="n">lnk</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">third</span><span class="o">.</span><span class="n">seq</span><span class="p">[:</span><span class="n">overlap</span><span class="p">]</span><span class="o">.</span><span class="n">reverse_complement</span><span class="p">())</span>
                 <span class="n">first</span><span class="o">.</span><span class="n">reverse_primer</span> <span class="o">=</span> <span class="n">lnk</span> <span class="o">+</span> <span class="n">first</span><span class="o">.</span><span class="n">reverse_primer</span>
             <span class="k">elif</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">third</span><span class="p">,</span> <span class="s2">&quot;template&quot;</span><span class="p">):</span>
-                <span class="n">third</span><span class="o">.</span><span class="n">forward_primer</span> <span class="o">=</span> <span class="n">secnd</span><span class="o">.</span><span class="n">seq</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;ASCII&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="n">third</span><span class="o">.</span><span class="n">forward_primer</span>
+                <span class="n">third</span><span class="o">.</span><span class="n">forward_primer</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="n">secnd</span><span class="o">.</span><span class="n">seq</span><span class="o">.</span><span class="n">_data</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;ASCII&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="n">third</span><span class="o">.</span><span class="n">forward_primer</span>
+                <span class="p">)</span>
                 <span class="n">lnk</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">first</span><span class="o">.</span><span class="n">seq</span><span class="p">[</span><span class="o">-</span><span class="n">overlap</span><span class="p">:])</span>
                 <span class="n">third</span><span class="o">.</span><span class="n">forward_primer</span> <span class="o">=</span> <span class="n">lnk</span> <span class="o">+</span> <span class="n">third</span><span class="o">.</span><span class="n">forward_primer</span>
             <span class="n">secnd</span> <span class="o">=</span> <span class="n">empty</span>
@@ -785,23 +840,23 @@
         <span class="k">else</span><span class="p">:</span>  <span class="c1"># secnd is larger than maxlink</span>
             <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="s2">&quot;template&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">secnd</span><span class="p">,</span> <span class="s2">&quot;template&quot;</span><span class="p">):</span>
                 <span class="n">lnk</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">first</span><span class="o">.</span><span class="n">seq</span><span class="p">[</span><span class="o">-</span><span class="n">tail_length</span><span class="p">:])</span>
-                <span class="c1"># _module_logger.debug(&quot;4 %s&quot;, lnk)</span>
+                <span class="c1"># #_module_logger.debug(&quot;4 %s&quot;, lnk)</span>
                 <span class="n">secnd</span><span class="o">.</span><span class="n">forward_primer</span> <span class="o">=</span> <span class="n">lnk</span> <span class="o">+</span> <span class="n">secnd</span><span class="o">.</span><span class="n">forward_primer</span>
                 <span class="n">lnk</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">secnd</span><span class="o">.</span><span class="n">seq</span><span class="p">[:</span><span class="n">tail_length</span><span class="p">]</span><span class="o">.</span><span class="n">reverse_complement</span><span class="p">())</span>
-                <span class="c1"># _module_logger.debug(&quot;5 %s&quot;, lnk)</span>
+                <span class="c1"># #_module_logger.debug(&quot;5 %s&quot;, lnk)</span>
                 <span class="n">first</span><span class="o">.</span><span class="n">reverse_primer</span> <span class="o">=</span> <span class="n">lnk</span> <span class="o">+</span> <span class="n">first</span><span class="o">.</span><span class="n">reverse_primer</span>
             <span class="k">elif</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="s2">&quot;template&quot;</span><span class="p">):</span>
                 <span class="n">lnk</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">secnd</span><span class="o">.</span><span class="n">seq</span><span class="p">[:</span><span class="n">overlap</span><span class="p">]</span><span class="o">.</span><span class="n">reverse_complement</span><span class="p">())</span>
-                <span class="c1"># _module_logger.debug(&quot;6 %s&quot;, lnk)</span>
+                <span class="c1"># #_module_logger.debug(&quot;6 %s&quot;, lnk)</span>
                 <span class="n">first</span><span class="o">.</span><span class="n">reverse_primer</span> <span class="o">=</span> <span class="n">lnk</span> <span class="o">+</span> <span class="n">first</span><span class="o">.</span><span class="n">reverse_primer</span>
             <span class="k">elif</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">secnd</span><span class="p">,</span> <span class="s2">&quot;template&quot;</span><span class="p">):</span>
                 <span class="n">lnk</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">first</span><span class="o">.</span><span class="n">seq</span><span class="p">[</span><span class="o">-</span><span class="n">overlap</span><span class="p">:])</span>
-                <span class="c1"># _module_logger.debug(&quot;7 %s&quot;, lnk)</span>
+                <span class="c1"># #_module_logger.debug(&quot;7 %s&quot;, lnk)</span>
                 <span class="n">secnd</span><span class="o">.</span><span class="n">forward_primer</span> <span class="o">=</span> <span class="n">lnk</span> <span class="o">+</span> <span class="n">secnd</span><span class="o">.</span><span class="n">forward_primer</span>
         <span class="n">f</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">first</span>
         <span class="n">f</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">secnd</span>
 
-    <span class="n">_module_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;loop ended&quot;</span><span class="p">)</span>
+    <span class="c1"># _module_logger.debug(&quot;loop ended&quot;)</span>
 
     <span class="n">f</span> <span class="o">=</span> <span class="p">[</span><span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">f</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">item</span><span class="p">)]</span>
 
@@ -822,23 +877,22 @@
 
 
 <div class="viewcode-block" id="circular_assembly_fragments">
-<a class="viewcode-back" href="../../index.html#pydna.design.circular_assembly_fragments">[docs]</a>
-<span class="k">def</span> <span class="nf">circular_assembly_fragments</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">overlap</span><span class="o">=</span><span class="mi">35</span><span class="p">,</span> <span class="n">maxlink</span><span class="o">=</span><span class="mi">40</span><span class="p">):</span>
-    <span class="n">fragments</span> <span class="o">=</span> <span class="n">assembly_fragments</span><span class="p">(</span><span class="n">f</span> <span class="o">+</span> <span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">],</span> <span class="n">overlap</span><span class="o">=</span><span class="n">overlap</span><span class="p">,</span> <span class="n">maxlink</span><span class="o">=</span><span class="n">maxlink</span><span class="p">)</span>
+<a class="viewcode-back" href="../../modules/pydna_design.html#pydna.all.circular_assembly_fragments">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">circular_assembly_fragments</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">overlap</span><span class="o">=</span><span class="mi">35</span><span class="p">,</span> <span class="n">maxlink</span><span class="o">=</span><span class="mi">40</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Equivalent to `assembly_fragments` with `circular=True`.</span>
 
-    <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">fragments</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;template&quot;</span><span class="p">):</span>
-        <span class="n">fragments</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">_pcr</span><span class="p">((</span><span class="n">fragments</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">forward_primer</span><span class="p">,</span> <span class="n">fragments</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">reverse_primer</span><span class="p">),</span> <span class="n">fragments</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">template</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">fragments</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span></div>
+<span class="sd">    Deprecated, kept for backward compatibility. Use `assembly_fragments` with `circular=True` instead.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
 
+    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+        <span class="s2">&quot;The circular_assembly_fragments function is deprecated. Use assembly_fragments with circular=True instead.&quot;</span><span class="p">,</span>
+        <span class="ne">DeprecationWarning</span><span class="p">,</span>
+        <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">assembly_fragments</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">overlap</span><span class="o">=</span><span class="n">overlap</span><span class="p">,</span> <span class="n">maxlink</span><span class="o">=</span><span class="n">maxlink</span><span class="p">,</span> <span class="n">circular</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div>
 
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">cached</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;pydna_cached_funcs&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-    <span class="n">_os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;pydna_cached_funcs&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-    <span class="kn">import</span> <span class="nn">doctest</span>
-
-    <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">optionflags</span><span class="o">=</span><span class="n">doctest</span><span class="o">.</span><span class="n">ELLIPSIS</span><span class="p">)</span>
-    <span class="n">_os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;pydna_cached_funcs&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cached</span>
 </pre></div>
 
            </div>

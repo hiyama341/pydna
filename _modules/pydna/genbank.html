@@ -1,22 +1,22 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../../">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>pydna.genbank &mdash; pydna 0.0.0.post1+233e38e documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+  <title>pydna.genbank &mdash; pydna 6.0.0a24.post17+b7b559bd66 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=a051be83" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../../_static/documentation_options.js?v=f031b35a"></script>
-        <script src="../../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=d848064a"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" /> 
@@ -33,9 +33,6 @@
           <a href="../../index.html" class="icon icon-home">
             pydna
           </a>
-              <div class="version">
-                0.0.0
-              </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
@@ -44,8 +41,15 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <!-- Local TOC -->
-              <div class="local-toc"></div>
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Pydna</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules/index.html">Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../example_gallery.html">Example gallery</a></li>
+</ul>
+
         </div>
       </div>
     </nav>
@@ -85,24 +89,26 @@
 <span class="sd">been set to a valid email address. The easiest way to do this permanantly is to edit the</span>
 <span class="sd">`pydna.ini` file. See the documentation of :func:`pydna.open_config_folder`&quot;&quot;&quot;</span>
 
-<span class="kn">from</span> <span class="nn">pydna.utils</span> <span class="kn">import</span> <span class="n">memorize</span> <span class="k">as</span> <span class="n">_memorize</span>
-<span class="kn">from</span> <span class="nn">pydna.genbankrecord</span> <span class="kn">import</span> <span class="n">GenbankRecord</span> <span class="k">as</span> <span class="n">_GenbankRecord</span>
-<span class="kn">from</span> <span class="nn">pydna.readers</span> <span class="kn">import</span> <span class="n">read</span> <span class="k">as</span> <span class="n">_read</span>
+<span class="c1"># from pydna.utils import memorize as _memorize</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pydna.genbankrecord</span><span class="w"> </span><span class="kn">import</span> <span class="n">GenbankRecord</span> <span class="k">as</span> <span class="n">_GenbankRecord</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pydna.readers</span><span class="w"> </span><span class="kn">import</span> <span class="n">read</span> <span class="k">as</span> <span class="n">_read</span>
 
-<span class="kn">from</span> <span class="nn">Bio</span> <span class="kn">import</span> <span class="n">Entrez</span> <span class="k">as</span> <span class="n">_Entrez</span>
-<span class="kn">import</span> <span class="nn">re</span> <span class="k">as</span> <span class="nn">_re</span>
-<span class="kn">import</span> <span class="nn">os</span> <span class="k">as</span> <span class="nn">_os</span>
-<span class="kn">import</span> <span class="nn">logging</span> <span class="k">as</span> <span class="nn">_logging</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">Bio</span><span class="w"> </span><span class="kn">import</span> <span class="n">Entrez</span> <span class="k">as</span> <span class="n">_Entrez</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Literal</span> <span class="k">as</span> <span class="n">_Literal</span><span class="p">,</span> <span class="n">Optional</span> <span class="k">as</span> <span class="n">_Optional</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_re</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">_os</span>
 
-<span class="n">_module_logger</span> <span class="o">=</span> <span class="n">_logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s2">&quot;pydna.&quot;</span> <span class="o">+</span> <span class="vm">__name__</span><span class="p">)</span>
+<span class="c1"># import logging as _logging</span>
+
+<span class="c1"># _module_logger = _logging.getLogger(&quot;pydna.&quot; + __name__)</span>
 
 
 <span class="c1"># TODO http://httpbin.org/ use for testing?</span>
 
 
 <div class="viewcode-block" id="Genbank">
-<a class="viewcode-back" href="../../index.html#pydna.genbank.Genbank">[docs]</a>
-<span class="k">class</span> <span class="nc">Genbank</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<a class="viewcode-back" href="../../modules/pydna_genbank.html#pydna.all.Genbank">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Genbank</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Class to facilitate download from genbank. It is easier and</span>
 <span class="sd">    quicker to use the :func:`pydna.genbank.genbank` function directly.</span>
 
@@ -122,25 +128,42 @@
 <span class="sd">    1</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">users_email</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">tool</span><span class="o">=</span><span class="s2">&quot;pydna&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">_re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}&quot;</span><span class="p">,</span> <span class="n">users_email</span><span class="p">,</span> <span class="n">_re</span><span class="o">.</span><span class="n">IGNORECASE</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">users_email</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">tool</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;pydna&quot;</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">_re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span>
+            <span class="sa">r</span><span class="s2">&quot;[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}&quot;</span><span class="p">,</span> <span class="n">users_email</span><span class="p">,</span> <span class="n">_re</span><span class="o">.</span><span class="n">IGNORECASE</span>
+        <span class="p">):</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;email address </span><span class="si">{}</span><span class="s2"> is not valid.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">users_email</span><span class="p">))</span>
 
-        <span class="n">_module_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;#### Genbank ititiation ####&quot;</span><span class="p">)</span>
-        <span class="n">_module_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Genbank initiated with email: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">users_email</span><span class="p">)</span>
-        <span class="n">_module_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Genbank initiated with tool : </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">tool</span><span class="p">)</span>
+        <span class="c1"># _module_logger.info(&quot;#### Genbank ititiation ####&quot;)</span>
+        <span class="c1"># _module_logger.info(&quot;Genbank initiated with email: %s&quot;, users_email)</span>
+        <span class="c1"># _module_logger.info(&quot;Genbank initiated with tool : %s&quot;, tool)</span>
 
         <span class="k">if</span> <span class="n">users_email</span> <span class="o">==</span> <span class="s2">&quot;someone@example.com&quot;</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;you have to set your email address in order to download from Genbank&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="s2">&quot;you have to set your email address in order to download from Genbank&quot;</span>
+            <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">email</span> <span class="o">=</span> <span class="n">users_email</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">tool</span> <span class="o">=</span> <span class="n">tool</span>
 
-    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;This method returns a short representation containing the email used to initiate.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="s2">&quot;GenbankConnection(</span><span class="si">{}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">email</span><span class="p">)</span>
 
-    <span class="nd">@_memorize</span><span class="p">(</span><span class="s2">&quot;pydna.genbank.Genbank.nucleotide&quot;</span><span class="p">)</span>
-    <span class="k">def</span> <span class="nf">nucleotide</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">seq_start</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">seq_stop</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">strand</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="c1"># @_memorize(&quot;pydna.genbank.Genbank.nucleotide&quot;)</span>
+<div class="viewcode-block" id="Genbank.nucleotide">
+<a class="viewcode-back" href="../../modules/pydna_genbank.html#pydna.all.Genbank.nucleotide">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">nucleotide</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">item</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+        <span class="n">seq_start</span><span class="p">:</span> <span class="n">_Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">seq_stop</span><span class="p">:</span> <span class="n">_Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">strand</span><span class="p">:</span> <span class="n">_Literal</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_GenbankRecord</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;This method downloads a genbank nuclotide record from genbank. This method is</span>
 <span class="sd">        cached by default. This can be controlled by editing the **pydna_cached_funcs** environment</span>
 <span class="sd">        variable. The best way to do this permanently is to edit the edit the</span>
@@ -191,7 +214,9 @@
             <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">_re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(REGION:\s(?P&lt;start&gt;\d+)\.\.(?P&lt;stop&gt;\d+))&quot;</span><span class="p">,</span> <span class="n">item</span><span class="p">)),</span>
             <span class="p">(</span>
                 <span class="mi">2</span><span class="p">,</span>
-                <span class="n">_re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(REGION: complement\((?P&lt;start&gt;\d+)\.\.(?P&lt;stop&gt;\d+)\))&quot;</span><span class="p">,</span> <span class="n">item</span><span class="p">),</span>
+                <span class="n">_re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span>
+                    <span class="sa">r</span><span class="s2">&quot;(REGION: complement\((?P&lt;start&gt;\d+)\.\.(?P&lt;stop&gt;\d+)\))&quot;</span><span class="p">,</span> <span class="n">item</span>
+                <span class="p">),</span>
             <span class="p">),</span>
             <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">_re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(:|\s)(?P&lt;start&gt;\d+)-(?P&lt;stop&gt;\d+)&quot;</span><span class="p">,</span> <span class="n">item</span><span class="p">)),</span>
             <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">_re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(:|\s)c(?P&lt;start&gt;\d+)-(?P&lt;stop&gt;\d+)&quot;</span><span class="p">,</span> <span class="n">item</span><span class="p">)),</span>
@@ -207,24 +232,23 @@
 
         <span class="k">if</span> <span class="n">strand</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]:</span>
             <span class="k">try</span><span class="p">:</span>
-                <span class="n">strand</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;c&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;crick&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;antisense&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;-1&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}[</span><span class="n">strand</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span>
+                <span class="n">strand</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;c&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;crick&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;antisense&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;-1&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}[</span>
+                    <span class="n">strand</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+                <span class="p">]</span>
             <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">AttributeError</span><span class="p">):</span>
                 <span class="n">strand</span> <span class="o">=</span> <span class="mi">1</span>
 
-        <span class="n">_module_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;#### Genbank download ####&quot;</span><span class="p">)</span>
-        <span class="n">_module_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;item  </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
-        <span class="n">_module_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;start </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">seq_start</span><span class="p">)</span>
-        <span class="n">_module_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;stop  </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">seq_stop</span><span class="p">)</span>
+        <span class="c1"># _module_logger.info(&quot;#### Genbank download ####&quot;)</span>
+        <span class="c1"># _module_logger.info(&quot;item  %s&quot;, item)</span>
+        <span class="c1"># _module_logger.info(&quot;start %s&quot;, seq_start)</span>
+        <span class="c1"># _module_logger.info(&quot;stop  %s&quot;, seq_stop)</span>
 
-        <span class="n">_module_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;strand  </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">strand</span><span class="p">))</span>
+        <span class="c1"># _module_logger.info(&quot;strand  %s&quot;, str(strand))</span>
 
         <span class="n">_Entrez</span><span class="o">.</span><span class="n">email</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">email</span>
         <span class="n">_Entrez</span><span class="o">.</span><span class="n">tool</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">tool</span>
 
-        <span class="n">seq_start</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">seq_start</span><span class="p">)</span> <span class="k">if</span> <span class="n">seq_start</span> <span class="k">else</span> <span class="kc">None</span>
-        <span class="n">seq_stop</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">seq_stop</span><span class="p">)</span> <span class="k">if</span> <span class="n">seq_stop</span> <span class="k">else</span> <span class="kc">None</span>
-
-        <span class="n">_module_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Entrez.email  </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">email</span><span class="p">)</span>
+        <span class="c1"># _module_logger.info(&quot;Entrez.email  %s&quot;, self.email)</span>
         <span class="n">text</span> <span class="o">=</span> <span class="n">_Entrez</span><span class="o">.</span><span class="n">efetch</span><span class="p">(</span>
             <span class="n">db</span><span class="o">=</span><span class="s2">&quot;nuccore&quot;</span><span class="p">,</span>
             <span class="nb">id</span><span class="o">=</span><span class="n">item</span><span class="p">,</span>
@@ -235,15 +259,18 @@
             <span class="n">retmode</span><span class="o">=</span><span class="s2">&quot;text&quot;</span><span class="p">,</span>
         <span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 
-        <span class="n">_module_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;text[:160]  </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">text</span><span class="p">[:</span><span class="mi">160</span><span class="p">])</span>
+        <span class="c1"># _module_logger.info(&quot;text[:160]  %s&quot;, text[:160])</span>
 
-        <span class="k">return</span> <span class="n">_GenbankRecord</span><span class="p">(</span><span class="n">_read</span><span class="p">(</span><span class="n">text</span><span class="p">),</span> <span class="n">item</span><span class="o">=</span><span class="n">item</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="n">seq_start</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="n">seq_stop</span><span class="p">,</span> <span class="n">strand</span><span class="o">=</span><span class="n">strand</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">_GenbankRecord</span><span class="p">(</span>
+            <span class="n">_read</span><span class="p">(</span><span class="n">text</span><span class="p">),</span> <span class="n">item</span><span class="o">=</span><span class="n">item</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="n">seq_start</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="n">seq_stop</span><span class="p">,</span> <span class="n">strand</span><span class="o">=</span><span class="n">strand</span>
+        <span class="p">)</span></div>
+</div>
 
 
 
 <div class="viewcode-block" id="genbank">
-<a class="viewcode-back" href="../../index.html#pydna.genbank.genbank">[docs]</a>
-<span class="k">def</span> <span class="nf">genbank</span><span class="p">(</span><span class="n">accession</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;CS570233.1&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<a class="viewcode-back" href="../../modules/pydna_genbank.html#pydna.all.genbank">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">genbank</span><span class="p">(</span><span class="n">accession</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;CS570233.1&quot;</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">_GenbankRecord</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Download a genbank nuclotide record.</span>
 
@@ -289,22 +316,12 @@
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">email</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;pydna_email&quot;</span><span class="p">)</span>
-    <span class="n">_module_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;#### genbank function called ####&quot;</span><span class="p">)</span>
-    <span class="n">_module_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;email      </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">email</span><span class="p">)</span>
-    <span class="n">_module_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;accession  </span><span class="si">%s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">email</span><span class="p">)</span>
+    <span class="c1"># _module_logger.info(&quot;#### genbank function called ####&quot;)</span>
+    <span class="c1"># _module_logger.info(&quot;email      %s&quot;, email)</span>
+    <span class="c1"># _module_logger.info(&quot;accession  %s&quot;, email)</span>
     <span class="n">gb</span> <span class="o">=</span> <span class="n">Genbank</span><span class="p">(</span><span class="n">email</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">gb</span><span class="o">.</span><span class="n">nucleotide</span><span class="p">(</span><span class="n">accession</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
-
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">cached</span> <span class="o">=</span> <span class="n">_os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;pydna_cached_funcs&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
-    <span class="n">_os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;pydna_cached_funcs&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
-    <span class="kn">import</span> <span class="nn">doctest</span>
-
-    <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">optionflags</span><span class="o">=</span><span class="n">doctest</span><span class="o">.</span><span class="n">ELLIPSIS</span><span class="p">)</span>
-    <span class="n">_os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;pydna_cached_funcs&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">cached</span>
-    <span class="k">pass</span>
 </pre></div>
 
            </div>
